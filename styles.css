@@ -1,0 +1,333 @@
+/*importing custom fonts*/
+@font-face{
+    font-family:BarlowRegular;
+    src: url(font/Barlow-Regular.otf);
+}
+@font-face{
+    font-family:BarlowLight;
+    src:url(font/Barlow-Light.otf)
+}
+
+/*main code*/
+body,html{
+    display:flex;
+    align-items:center;
+    font-size:16px;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:BarlowRegular,sans-serif;
+    background-color:#EFF6FF;
+}
+
+/*the entire container*/
+.page-container{
+    margin:0 auto;
+    width:70%;
+    height:85%;
+    display:flex;
+    flex-direction:row;
+    box-shadow:0 0 8px 8px rgba(0, 0, 0, 0.137);
+}
+
+/*left side of the page-container*/
+.aside-image{
+    position:relative;
+    width:50%;
+    height:100%;
+    display:inline-block;
+    background-image:url(images/aside-background-image.jpg);
+    background-size:cover;
+}
+
+.logo-wrapper{
+    width:80px;
+    max-width:100px;
+    position:absolute;
+    left:2rem;
+    top:2rem;
+}
+
+
+/*right side of the page-container*/
+.account-registration-container{
+    width:50%;
+    height:100%;
+    display:inline-block;
+    background-color:white;
+    color:black;
+}
+
+/*Non-visual container*/
+.registration-info-container{
+    width:75%;
+    height:85%;
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+    margin-top: 3rem;
+    position:relative;
+    /* border:1px solid black; */
+}
+
+.registration-info-container p{
+    font-size:0.8rem;
+    color:#96A5B1;
+}
+
+.registration-info-container h1{
+    font-family:BarlowLight;
+    font-size:1rem;
+    color:#2A4A5C;
+}
+
+/*Registration with apps(Facebook or LinkedIn)*/
+.registration-with-apps{
+    display:flex;
+    justify-content:space-between;
+    margin-top:1.5rem;
+}
+
+/*Registration with apps buttons*/
+button{
+    color:white;
+    padding-top:0.6rem;
+    padding-bottom:0.6rem;
+    padding-left:0.8rem;
+    position:relative;
+    border:none;
+    width:10.55rem;
+}
+
+button span{
+    font-size:0.7rem;
+    color:#EEEEEE;
+}
+
+button img{
+    position:absolute;
+    top:0.6rem;
+    left:0.5rem;
+}
+
+.facebook-btn{
+    background-color:#255A9B;
+}
+
+.LinkedIn-btn{
+    background-color: #0076B6;
+}
+
+/*divider*/
+.divider{
+    margin:1.5rem 0;
+    display:flex;
+    justify-content:center;
+}
+
+.divider span{
+    margin-left:10px;
+    margin-right:10px;
+    color: rgba(0, 0, 0, 0.473);
+}
+
+.divider hr{
+    flex:1;/*so that it is seen*/
+    border-top:1px solid rgba(0, 0, 0, 0.148);
+}
+
+.divider span{
+    font-size:0.8rem;
+}
+
+/*Another method of account-registration, form*/
+.registration-form-container{
+    position:relative;
+    flex-grow:1;/*Making sure the registration-form-container takes up the remaining available height*/
+}
+
+.registration-form{
+    width:100%;
+}
+
+/*The input fields where you enter your personal info*/
+.registration-form .input-fields{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+.registration-form .input-fields div{
+    position:relative;
+    display:inline-block;
+}
+
+.input-fields input{
+    outline:none;
+    padding-top:1.2rem;
+    padding-bottom:0.5rem;
+    padding-left:0.42rem;
+    border:none;
+    box-shadow:0 0 1.2px black;
+    font-size: 0.7rem;
+    width:10rem;
+}
+
+.input-fields input:focus{
+    padding-left:0.37rem; /*Changed padding left so that the whitespace before text stays the same when the border is applied*/
+    border-left:0.8px solid #3698FB;
+}
+
+.input-fields label{
+    font-size:0.7rem;
+    position:absolute;
+    color:#96A5B1;
+    left:0.4rem;
+    top:0.1rem;
+}
+
+/*The part that begins with the header "What type of investor you are"*/
+.investor-type-container{
+    margin-top:2rem;
+}
+
+.investor-type-container, .investor-type-radio{
+    width:100%;
+}
+
+/*Visually hiding the initial radio button to make a custom one*/
+.investor-type-radio input{
+    width:1px;
+    height:1px;
+    overflow:hidden;
+    clip-path:inset(50%);
+}
+
+.investor-type-radio label{
+    padding-left:0.4rem;
+    position:relative;
+}
+
+/*Custom radio buttons*/
+.investor-type-radio #custom-radio{
+    position:absolute;
+    left:0;
+    top:5.5px;
+    width:10px;
+    height:10px;
+    border:0.5px solid rgba(0, 0, 0, 0.271);
+    border-radius:50%;
+    background-color: white;
+}
+
+/*When the custom radio button is checked*/
+.investor-type-radio input:checked + #custom-radio{
+    border:0.5px solid rgba(0, 0, 0, 0);/*hiding the border*/
+    outline:3.5px solid blue;
+    outline-offset:-3.5px;
+}
+
+/*When the custom radio button is on focus*/
+#custom-radio-focus{
+    width:15px;
+    height:15px;
+    border:2px solid rgba(0, 0, 0, 0.753);
+    position:absolute;
+    border-radius:2px;
+    left:-2px;
+    top:2px;
+    opacity:0;
+}
+
+
+/*Radio buttons*/
+.investor-type-radio{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+}
+
+.investor-type-radio span{
+    font-size:0.8rem;
+}
+
+.investor-type-radio img{
+    opacity: 0.4;
+}
+
+.investor-type-radio input:focus ~ #custom-radio-focus{
+    opacity:1;
+}
+
+.investor-type-radio label:hover{
+    cursor:pointer;
+}
+
+/*a cool slide that pops up containing the definitions about investor types*/
+.investor-type-radio{
+    margin-bottom:6rem;/*So that there is a place for a slide to pop up*/
+}
+
+.info-image-wrapper{
+    display:inline-block;
+}
+
+ 
+.info-image-wrapper::after{
+    content:attr(data-info);
+    color:#AFAFAF;
+    box-shadow:0 0 3px 3px #EEEEEE;
+    font-size:0.6rem;
+    position:absolute;
+    left:0.2rem;;
+    top:2rem;
+    padding:0.4rem 0.5rem;
+    min-width:6rem;
+    height:auto;
+    opacity:0;
+    transform:scale(0);
+}
+
+.investor-type-radio input:checked ~ .info-image-wrapper::after{
+    opacity:1;
+    transform:scale(1);
+}
+
+/*terms */
+.terms-agreement{
+    width:100%;
+    color:#AFAFAF;
+    font-size:0.6rem;
+    opacity:0.8;
+    position:relative;
+    padding-left:1.5rem;
+}
+
+.terms-agreement input{
+    position:absolute;
+    top:-0.2rem;
+    left:-0.25rem;
+}
+
+.terms-agreement a{
+    color:#3698FB;
+}
+
+/*Create account button*/
+#button{
+    padding:0.7rem 2.5rem;
+    background-color:#3698FB;
+    border-radius:3px;
+    font-size:0.7rem;
+    color:white;
+    border:none;
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+
+#button:hover{
+    cursor:pointer
+}

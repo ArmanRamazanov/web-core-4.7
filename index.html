@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Верстка макета(1.4.7)</title>
+</head>
+<body>
+    <div class="page-container">
+
+        <!--left side of the container-->
+        <div class="aside-image">
+            <div class="logo-wrapper">
+                <img src="images/logo.svg" alt="iintoo logo" width="80">
+            </div>    
+        </div>
+
+        <!--right side of the container-->
+        <div class="account-registration-container">
+            <!--Non-visual container for stylistic purposes-->
+            <div class="registration-info-container">
+
+                <!--First method of registration-->
+                <div class="registration-with-apps-container">
+                    <h1>Get iintoo it today</h1>
+                    <p>There is no charge or obligation upon registration.</p>
+
+                    <!--Register with external apps-->
+                    <div class="registration-with-apps">
+                        <button class="facebook-btn">
+                            <img src="images/facebook.svg" width="15" height="15">
+                            <span>Register with Facebook</span>
+                        </button>
+                        <button class="LinkedIn-btn">
+                            <img src="images/linkedin.svg" width="15" height="15">
+                            <span>Register with LinkedIn</span>
+                        </button>
+                    </div>
+                    
+                <!--Divider-->
+                </div>
+                <div class="divider">
+                    <hr>
+                    <span>OR</span>
+                    <hr>
+                </div>
+
+                <!--The second method of registration, form-->
+                <div class="registration-form-container">
+                    <form class="registration-form" method="POST" action="handler">
+
+                        <!--Input fields where you enter your personal information-->
+                        <div class="input-fields">
+                            <div>
+                                <label for="email">Email</label> <input type="text" id="email" name="email">
+                            </div>
+                            <div>
+                                <label for="phone">Phone</label> <input type="text" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <!--The part after the input fields, where you have to choose what type of investor you are-->
+                        <div class="investor-type-container">
+                            <h1>What type of investor are you?</h1>
+                            <p>Select the type of investor you are below</p>
+
+                            <!--All the radio buttons-->
+                            <div class="investor-type-radio">
+                                <div>
+                                    <label for="individual">
+                                        <input type="radio" id="individual" name="radio" checked>
+                                        <span id="custom-radio"></span>
+                                        <span id="custom-radio-focus"></span>
+                                        <span>Individual</span>
+                                        <div class="info-image-wrapper" data-info="I am a natural person investing
+                                                                                    on my own behalf as a solo owner,
+                                                                                    joint tenant, or tenant in common">
+                                            <img  src="images/info-circle.svg" width="10" height="10">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="business">
+                                        <input type="radio" id="business" name="radio">
+                                        <span id="custom-radio"></span>
+                                        <span id="custom-radio-focus"></span>
+                                        <span>Business</span>
+                                        <div class="info-image-wrapper" data-info="I am a natural person investing
+                                                                                    on my own behalf as a solo owner,
+                                                                                    joint tenant, or tenant in common">
+                                            <img  src="images/info-circle.svg" width="10" height="10">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="IRA">
+                                        <input type="radio" id="IRA" name="radio">
+                                        <span id="custom-radio"></span>
+                                        <span id="custom-radio-focus"></span><!--for focus state of radio buttons-->
+                                        <span>IRA</span>
+                                        <div class="info-image-wrapper" data-info="I am a natural person investing
+                                                                                    on my own behalf as a solo owner,
+                                                                                    joint tenant, or tenant in common">
+                                            <img  src="images/info-circle.svg" width="10" height="10">
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="trust">
+                                        <input type="radio" id="trust" name="radio">
+                                        <span id="custom-radio"></span>
+                                        <span id="custom-radio-focus"></span>
+                                        <span>Trust</span>
+                                        <div class="info-image-wrapper" data-info="I am a natural person investing
+                                                                                    on my own behalf as a solo owner,
+                                                                                    joint tenant, or tenant in common">
+                                            <img  src="images/info-circle.svg" width="10" height="10">
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!--Checkbox with terms of agreement -->
+                            <div class="terms-agreement">
+                                <label for="agreement-with-terms">
+                                    <input type="checkbox" id="agreement-with-terms" name="agreement-with-terms" reqired>
+                                    I agree to the terms and receiving notifications from iintoo 
+                                    <a href="#">
+                                        View full terms
+                                    </a>
+                                </label>
+                            </div>
+
+                            <!--Button to create an account-->
+                            <input type="submit" value="Create account" name="create-account" id="button">
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
