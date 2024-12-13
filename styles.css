@@ -11,10 +11,11 @@
 /*main code*/
 body,html{
     display:flex;
+    justify-content:center;
     align-items:center;
     font-size:16px;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100svh;
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -24,62 +25,68 @@ body,html{
 
 /*the entire container*/
 .page-container{
-    margin:0 auto;
     width:70%;
-    height:85%;
+    min-height: 600px;
+    min-width:400px;
+    /* flex-wrap:wrap; */
     display:flex;
     flex-direction:row;
     box-shadow:0 0 8px 8px rgba(0, 0, 0, 0.137);
 }
 
+.page-container > div{
+    flex:1;
+}
+
 /*left side of the page-container*/
 .aside-image{
     position:relative;
-    width:50%;
-    height:100%;
-    display:inline-block;
     background-image:url(images/aside-background-image.jpg);
     background-size:cover;
 }
 
 .logo-wrapper{
-    width:80px;
-    max-width:100px;
+    max-width:10px;
     position:absolute;
-    left:2rem;
-    top:2rem;
-}
-
-
+    left:2em;
+    top:2em;
+}  
+ 
 /*right side of the page-container*/
 .account-registration-container{
-    width:50%;
-    height:100%;
-    display:inline-block;
+    height:100;
+    padding-right:0.5rem;
+    padding-left:0.5em;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex:1;
     background-color:white;
     color:black;
 }
 
 /*Non-visual container*/
 .registration-info-container{
+    padding:0.5em;
     width:75%;
-    height:85%;
+    min-height:480px;
     display:flex;
     flex-direction:column;
-    margin:auto;
-    margin-top: 3rem;
+    gap:1.5rem; 
     position:relative;
-    /* border:1px solid black; */
+    border:1px solid black;
 }
 
 .registration-info-container p{
-    font-size:0.8rem;
+    font-size: 0.6rem;
+    font-size: clamp(0.6rem, 0.5399999999999999rem + 0.30000000000000004vw, 0.9rem);
     color:#96A5B1;
 }
 
 .registration-info-container h1{
     font-family:BarlowLight;
-    font-size:1rem;
+    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 0.7100000000000001rem + 0.44999999999999996vw, 1.25rem);
     color:#2A4A5C;
 }
 
@@ -87,42 +94,45 @@ body,html{
 .registration-with-apps{
     display:flex;
     justify-content:space-between;
-    margin-top:1.5rem;
+    gap:1em;
 }
 
 /*Registration with apps buttons*/
 button{
+    flex:1;
     color:white;
-    padding-top:0.6rem;
-    padding-bottom:0.6rem;
-    padding-left:0.8rem;
+    padding:1em 3em;
     position:relative;
     border:none;
-    width:10.55rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.44rem + 0.30000000000000004vw, 0.8rem); 
+    font-family:BarlowRegular, sans-serif; 
 }
 
-button span{
-    font-size:0.7rem;
-    color:#EEEEEE;
+.registration-with-apps button:last-child span{
+    letter-spacing:0.02455em;/*The content-size of buttons differ,so I wanted to make them equal*/
+}   
+
+button:hover{
+    cursor:pointer;
 }
 
 button img{
     position:absolute;
-    top:0.6rem;
-    left:0.5rem;
+    top:0.7em;
+    left:0.5em;
 }
 
 .facebook-btn{
     background-color:#255A9B;
 }
 
-.LinkedIn-btn{
+.Linkedin-btn{
     background-color: #0076B6;
 }
 
 /*divider*/
 .divider{
-    margin:1.5rem 0;
     display:flex;
     justify-content:center;
 }
@@ -130,6 +140,8 @@ button img{
 .divider span{
     margin-left:10px;
     margin-right:10px;
+    font-size: 0.6rem;
+    font-size: clamp(0.6rem, 0.5599999999999999rem + 0.2000000000000001vw, 0.8rem);
     color: rgba(0, 0, 0, 0.473);
 }
 
@@ -138,14 +150,10 @@ button img{
     border-top:1px solid rgba(0, 0, 0, 0.148);
 }
 
-.divider span{
-    font-size:0.8rem;
-}
-
 /*Another method of account-registration, form*/
 .registration-form-container{
     position:relative;
-    flex-grow:1;/*Making sure the registration-form-container takes up the remaining available height*/
+    flex:1;/*Making sure the registration-form-container takes up the remaining available height*/
 }
 
 .registration-form{
@@ -153,45 +161,50 @@ button img{
 }
 
 /*The input fields where you enter your personal info*/
-.registration-form .input-fields{
+.input-fields{
     display:flex;
     justify-content:space-between;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
+    gap:1em;
 }
 
-.registration-form .input-fields div{
+.input-fields div{
     position:relative;
-    display:inline-block;
+    flex:1;
+    display:flex;
+    justify-content:row;
 }
 
 .input-fields input{
+    flex:1;
     outline:none;
-    padding-top:1.2rem;
-    padding-bottom:0.5rem;
-    padding-left:0.42rem;
+    padding-top:1.3em;
+    padding-bottom:1em;
+    padding-left:.6em;
     border:none;
     box-shadow:0 0 1.2px black;
-    font-size: 0.7rem;
-    width:10rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.44rem + 0.30000000000000004vw, 0.8rem);
 }
 
 .input-fields input:focus{
-    padding-left:0.37rem; /*Changed padding left so that the whitespace before text stays the same when the border is applied*/
-    border-left:0.8px solid #3698FB;
+    padding-left:0.53em; /*Changed padding left so that the whitespace before text stays the same when the border is applied*/
+    border-left:0.1em solid #3698FB;
 }
 
 .input-fields label{
-    font-size:0.7rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.44rem + 0.30000000000000004vw, 0.8rem);
     position:absolute;
     color:#96A5B1;
-    left:0.4rem;
-    top:0.1rem;
+    left:0.4em;
+    top:0.1em;
 }
 
 /*The part that begins with the header "What type of investor you are"*/
-.investor-type-container{
+/* .investor-type-container{
     margin-top:2rem;
-}
+} */
 
 .investor-type-container, .investor-type-radio{
     width:100%;
@@ -206,7 +219,7 @@ button img{
 }
 
 .investor-type-radio label{
-    padding-left:0.4rem;
+    padding-left:0.4em;
     position:relative;
 }
 
@@ -250,7 +263,8 @@ button img{
 }
 
 .investor-type-radio span{
-    font-size:0.8rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.44rem + 0.30000000000000004vw, 0.8rem);;
 }
 
 .investor-type-radio img{
@@ -267,11 +281,18 @@ button img{
 
 /*a cool slide that pops up containing the definitions about investor types*/
 .investor-type-radio{
-    margin-bottom:6rem;/*So that there is a place for a slide to pop up*/
+    margin-bottom:6em;/*So that there is a place for a slide to pop up*/
 }
 
 .info-image-wrapper{
     display:inline-block;
+}
+
+.info-image-wrapper img{
+    position:absolute;
+    right:-0.5em;
+    top:0.4em;
+
 }
 
  
@@ -279,11 +300,14 @@ button img{
     content:attr(data-info);
     color:#AFAFAF;
     box-shadow:0 0 3px 3px #EEEEEE;
-    font-size:0.6rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.47rem + 0.15000000000000002vw, 0.65rem);
     position:absolute;
-    left:0.2rem;;
-    top:2rem;
-    padding:0.4rem 0.5rem;
+    white-space:wrap;
+    border-radius:5px; 
+    left:0;
+    top:3em;
+    padding:0.4em 0.5em;
     min-width:6rem;
     height:auto;
     opacity:0;
@@ -295,11 +319,16 @@ button img{
     transform:scale(1);
 }
 
+.investor-type-radio div:last-child .info-image-wrapper::after{
+    left:-6em;
+}
+
 /*terms */
 .terms-agreement{
     width:100%;
     color:#AFAFAF;
-    font-size:0.6rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.47rem + 0.15000000000000002vw, 0.65rem);
     opacity:0.8;
     position:relative;
     padding-left:1.5rem;
@@ -307,8 +336,8 @@ button img{
 
 .terms-agreement input{
     position:absolute;
-    top:-0.2rem;
-    left:-0.25rem;
+    top:-0.2em;
+    left:-0.25em;
 }
 
 .terms-agreement a{
@@ -317,10 +346,11 @@ button img{
 
 /*Create account button*/
 #button{
-    padding:0.7rem 2.5rem;
+    padding:0.7em 2.5em;
     background-color:#3698FB;
     border-radius:3px;
-    font-size:0.7rem;
+    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 0.44rem + 0.30000000000000004vw, 0.8rem);
     color:white;
     border:none;
     position:absolute;
@@ -331,3 +361,42 @@ button img{
 #button:hover{
     cursor:pointer
 }
+
+/*Media queries for responsive design*/
+@media(min-width:1750px){
+    .registration-info-container{
+        min-height:500px;
+    }
+}
+
+@media(max-width:1185px){
+    .page-container{
+        width:60%;
+    }
+
+    .aside-image{
+       display:none
+    }
+
+    .account-registration-container{
+        width:100%;
+        height:auto;
+    }
+}
+
+@media(max-width:600px){
+    
+    .registration-info-container{
+        min-height:400px;
+        min-width:350px;
+        gap:1rem;
+    }
+}
+
+@media(orientation:landscape){
+    body,html{
+        overflow:scroll;
+    }
+}
+
+
