@@ -74,7 +74,6 @@ body,html{
     flex-direction:column;
     gap:1.5rem; 
     position:relative;
-    border:1px solid black;
 }
 
 .registration-info-container p{
