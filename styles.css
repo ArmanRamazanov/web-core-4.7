@@ -313,7 +313,7 @@ button img{
     transform:scale(0);
 }
 
-.investor-type-radio input:checked ~ .info-image-wrapper::after{
+.investor-type-radio input:hover ~ .info-image-wrapper::after{
     opacity:1;
     transform:scale(1);
 }
